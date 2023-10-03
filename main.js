@@ -27,13 +27,13 @@ function createImgs(target, num) {
 	const imgs = target.querySelectorAll('img');
 	let count = 0;
 	imgs.forEach((img) => {
-		//만약 이미지요소의 소스이미지에 문제 발생시 대체 이미지 처리
 		img.onerror = () => {
 			img.setAttribute('src', 'img/thumb1.jpg');
 		};
 
 		img.onload = () => {
 			count++;
+			console.log(count);
 			const percent = parseInt((count / num) * 100);
 			loadingNum.innerText = percent;
 
@@ -53,7 +53,7 @@ function createImgs(target, num) {
 function convertSpeed(el) {
 	//해당요소의 transition-duration값을 재연산해서 가져온다음
 	//숫자로 바꾸고 *1000을 해서 밀리세컨드 형태로 반환
-	const result = getComputedStyle(el).transitionDuration;
+	const result = parseFloat(getComputedStyle(el).transitionDuration);
 	return result * 1000;
 }
 
