@@ -7,5 +7,14 @@
 //img 노드 생성
 //src 속성 생성
 //src속성 노드에 value = img/pic0~100.jpg
-//위의 100번 반복을 돌리면서
-//append로 이미지 요소 반복추가
+//위의 img돔생성을 100번 반복을 돌리면서
+//append로 section 프레임안에 추가
+
+const section = document.querySelector('section');
+
+const img = document.createElement('img');
+const src = document.createAttribute('src');
+src.value = 'img/pic200.jpg';
+img.setAttributeNode(src);
+
+section.append(img);
