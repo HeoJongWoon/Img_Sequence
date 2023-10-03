@@ -29,4 +29,10 @@ aside {
 	align-items: center;
 	font-size: 100px;
 	color: #fff;
+	opacity: 1;
+	transition: opacity 0.8s;
+
+	&.off {
+		opacity: 0;
+	}
 }
